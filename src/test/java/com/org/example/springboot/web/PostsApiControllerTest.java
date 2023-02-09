@@ -24,6 +24,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment =  SpringBootTest.WebEnvironment.RANDOM_PORT)
+/*@WebMvcTest의 경우 JPA 기능이 작동하지 않기 때문에 Controller와 ContrellerTest 등
+ 외부 연동과 관련된 부분만 활성화 되니 지금 같이 JPA 기능까지
+ 한번에 테스트할 때는 @SpringBootTest와 TestRestTemplate을 사용한다.*/
 public class PostsApiControllerTest {
     @LocalServerPort
     private int port;

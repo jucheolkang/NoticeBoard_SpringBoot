@@ -26,6 +26,9 @@ public class Posts extends BaseTimeEntity{
     private String author;
 
     @Builder
+    /*@Setter가 없는 대신 생성자를 이용해서 최종 값을 db에 삽입,
+     값 변경이 필요한 경우 해당 이벤트에 맞는 public 메소드를 호출 하는 것을 전제로 함
+     지금은 생성자 대신 @Builder를 사용*/
     public Posts(String title, String content, String author){
         this.title = title;
         this.content = content;
